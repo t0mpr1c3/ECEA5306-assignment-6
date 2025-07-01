@@ -1,0 +1,22 @@
+From 38a554cef2156da122f034130a6beb21fdf9e200 Mon Sep 17 00:00:00 2001
+From: Tom Price <t0mpr1c3@gmail.com>
+Date: Tue, 1 Jul 2025 01:33:20 -0400
+Subject: [PATCH] fix Makefile
+
+---
+ server/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/server/Makefile b/server/Makefile
+index 136a145..18d1f18 100644
+--- a/server/Makefile
++++ b/server/Makefile
+@@ -10,7 +10,7 @@ DESTDIR := $(dirname $0)/..
+ all default: $(TARGET)
+ 
+ $(TARGET): $(OBJ)
+-	$(CC) $(CFLAGS) -o $@ $^
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -c $< -o $@
