@@ -1,0 +1,24 @@
+From b728e17ecbac3f37b42814d046982daff2fc221d Mon Sep 17 00:00:00 2001
+From: Tom Price <t0mpr1c3@gmail.com>
+Date: Tue, 1 Jul 2025 08:09:50 -0400
+Subject: [PATCH] add initialization script
+
+---
+ server/start-aesdsocket | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100755 server/start-aesdsocket
+
+diff --git a/server/start-aesdsocket b/server/start-aesdsocket
+new file mode 100755
+index 0000000..76b1854
+--- /dev/null
++++ b/server/start-aesdsocket
+@@ -0,0 +1,8 @@
++#!/bin/sh
++
++# use start-stop-daemon to start aesdsocket application in daemon mode with the -d option
++
++echo "Starting aesdsocket daemon"
++start-stop-daemon -S -n aesdsocket -a /usr/bin/aesdsocket -- -d
++
++exit 0
